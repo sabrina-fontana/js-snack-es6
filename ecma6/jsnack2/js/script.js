@@ -40,11 +40,9 @@ function randomNumber(min, max) {
 for (let x = 0; x < squadre.length; x++) {
   squadre[x].punti = randomNumber(0, 20);
   squadre[x].falliSubiti = randomNumber(0, 10);
-}
-
-// Infine usando la destrutturazione creiamo un nuovo array i cui elementi contengono solo nomi e falli subiti e stampiamo tutto in console.
-for (let x = 0; x < squadre.length; x++) {
+  // Infine usando la destrutturazione creiamo un nuovo array i cui elementi contengono solo nomi e falli subiti e stampiamo tutto in console.
   const {nome, falliSubiti} = squadre[x];
+  // pusho un OGGETTO
   nuovoSquadre.push(
     {
       nome,
@@ -55,3 +53,9 @@ for (let x = 0; x < squadre.length; x++) {
 
 console.log(squadre);
 console.log(nuovoSquadre);
+
+var oggetto1 = [1, 2]
+var oggetto2 = [3, 4]
+var insieme =[...oggetto1, ...oggetto2]
+console.log(insieme)
+console.log(oggetto1 + oggetto2)
