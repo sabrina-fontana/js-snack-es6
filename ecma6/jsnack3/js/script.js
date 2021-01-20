@@ -2,30 +2,39 @@
 // La funzione ritornerà un nuovo array con i valori che hanno la posizione compresa tra i due numeri
 
 // ECMA5
-// var arrayNum = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-// console.log('arrayNum è composto da: ' + arrayNum);
+// var arrayNomi = ['qui', 'quo', 'qua', 'pippo', 'pluto', 'paperino'];
+// console.log('arrayNomi è composto da: ' + arrayNomi);
 //
-// function myFunction(array, A, B) {
+// var posizioneMin = parseInt(prompt('Inserisci il numero min'));
+// var posizioneMax = parseInt(prompt('Inserisci il numero max (non superiore a 6)'));
+//
+// function myFunction(array, min, max) { //dove min e max rappresentano la posizione umana nell'array (+1 rispetto all'index)
 //   var newArray = [];
 //   for (var x = 0; x < array.length; x++) {
-//     if (x >= A && x <= B) {
+//     if ((x + 1) >= min && (x + 1) <= max) {
 //       newArray.push(array[x]);
 //     }
 //   }
 //   return newArray;
 // };
 //
-// console.log('I numeri che hanno index compreso tra 3 e 8 di arrayNum sono: ' + myFunction(arrayNum, 3, 8));
-
+// console.log('I nomi che hanno posizione compresa tra ' + posizioneMin + ' e ' + posizioneMax + ' di arrayNomi sono: ' + myFunction(arrayNomi, posizioneMin, posizioneMax));
+//
 // ECMA6
-const arrayNum = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-console.log('arrayNum è composto da: ' + arrayNum);
+const arrayNomi = ['qui', 'quo', 'qua', 'pippo', 'pluto', 'paperino'];
+console.log('arrayNomi è composto da: ' + arrayNomi);
 
-let myFunction = (array, A, B) => { //dove A e B rappresentano l'index
+let posizioneMin = parseInt(prompt('Inserisci il numero min'));
+let posizioneMax = parseInt(prompt('Inserisci il numero max (non superiore a 6'));
+
+let myFunction = (array, min, max) => {
   let newArray = array.filter((element, index, array) => {
-    return (A <= index && index <= B)
+    return (min <= (index + 1) && (index + 1) <= max)
   });
   return newArray;
 }
 
-console.log('I numeri che hanno index compreso tra 3 e 8 di arrayNum sono: ' + myFunction(arrayNum, 3, 8));
+console.log(
+  `I nomi che hanno posizione compresa tra ${posizioneMin} e ${posizioneMax} di arrayNomi sono `
+  + myFunction(arrayNomi, posizioneMin, posizioneMax)
+);
